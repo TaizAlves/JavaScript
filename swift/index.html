@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swift</title>
+    <style>
+        body{
+            font: normal 10pt Arial;
+            margin: 32px 32px;
+        }
+        input{
+            font:normal 12px Arial;
+            width: 120px;
+            margin: 20px 4px;
+            text-align: center;
+            
+        }
+        input[type= "button"]{
+            background-color: darkblue;
+            color: white;
+            padding: 6px ;
+            font-weight: bold;
+            font-size: 12px;
+            border-radius: 6px;
+            margin-left: 2px;
+
+        }
+        #res{
+            border: none;
+            margin-top: 10px;
+            display: block;
+            box-sizing: border-box;
+      
+
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+    <h2>Treinando Swift e a pirâmide do Mário</h2>
+    Altura da Pirâmide <input type="number" name="height" id="height">
+    <input type="button" value="GO!" onclick= "go()">
+    </div>
+    <textarea id="res" cols="30" rows="10"></textarea>
+
+    <div class="time">
+        <p>Dia da semana:</p>
+    </div>
+    
+    <script>
+        
+        function go(){
+            var size = document.querySelector('#height')
+            var sizeInfo= Number(size.value)
+            var pyramede = document.querySelector('#res')
+            //pyramede.innerHTML = `${sizeInfo}`
+
+            for (let i=0; i < sizeInfo; i++){
+                for (let s = 0; s < sizeInfo -i -1; s++){
+                    pyramede.innerHTML +=` `
+                }
+                for(let h = sizeInfo -i; h <= sizeInfo; h++){
+                    pyramede.innerHTML += `#`
+                }
+                    pyramede.innerHTML +=`  `
+                for (let x = sizeInfo-i; x <= sizeInfo; x++){
+                    pyramede.innerHTML +=  `#`
+                }
+                pyramede.innerHTML +=`\n`
+
+
+            }
+        }
+
+    
+       var day = document.querySelector(".time")
+        var today= new Date()
+        var diaSem =  today.getDay()
+
+            switch (diaSem) {
+            case 0:
+                day.innerHTML += `domingo`
+                break;
+            case 1:
+                day.innerHTML +="segunda"
+                break;
+            case 2:
+                day.innerHTML += "terça"
+                break;
+            case 3:
+                day.innerHTML += "quarta"
+                break;
+            case 4:
+                day.innerHTML += "quinta"
+                break;
+            case 5:
+                day.innerHTML += "<p>sexta<\p>"
+                break;
+            case 6:
+                day.innerHTML += "sábado"
+                break;
+            }
+      
+      
+       
+        
+
+    </script>
+
+</body>
+</html>

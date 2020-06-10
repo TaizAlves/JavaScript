@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condicional</title>
+</head>
+<body>
+    <h1>Sistema de Velocidade</h1>
+    Velocidadedo carro <input type="number" name="vel" id="vel"> Km/h
+    <input type="button" value="Verificar" onclick="calcular()">
+    <div class="res"></div>
+
+    <script>
+        function calcular(){
+            var textv = document.querySelector('#vel')
+            var result = document.querySelector('.res')
+            var speed = +(textv.value)
+            result.innerHTML = `<p>Sua velocidade atual é de <strong>${speed}</strong> km/h </p>`
+            if (speed >80){
+                result.innerHTML += `<p>Você foi multado por excesso de velocidade. Diminua! </p>`
+            }
+            result.innerHTML += `<p>Use sempre o cinto de segurança!</p>`
+
+        }
+    </script>
+
+</body>
+</html>
